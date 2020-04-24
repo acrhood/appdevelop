@@ -1,0 +1,66 @@
+<ion-content>
+<ion-card-content class="ion-padding">
+  <ion-row class="ion-margin-start">
+    <img src="../../../assets/icon/costarica.svg" style="position: absolute; z-index: -1; margin-top: 9.5%">
+    <p style="font-size: 3em">¡Hola!,</p>
+    <p style="margin-top: -5px;">selecciona la sucursal donde desees realizar la compra</p>
+    <br>
+  </ion-row>
+  <div class="search" style="width: 100%;" align="center">
+    <ion-input style="background: #f3f3f3;" type="text" role="search" clearInput id="search" placeholder="    Buscar" required></ion-input>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of listSucursales" size="12" align="center" (click)="selectSucursal(item[0])"
+      [ngStyle]="{'background-image': 'url('+ item[20] +')'}"
+                                       style="background-color: rgba(0,0,0,0.6);
+                                              background-blend-mode: multiply;
+                                              background-size: cover;
+                                              height: 150px;
+                                              padding: 5%;
+                                              margin-bottom: 5px;" [routerLink]="['/menu']">
+        <p style="color: white; font-size: 1.2em; font-weight: 500;">{{ item[1] }}</p>
+        <ion-label style="color: white;">{{ item [18] }}</ion-label><br>
+        <ion-label style="color: white;"> {{ item[19] }}</ion-label>
+      </ion-col>
+      <!-- <ion-col size="12" align="center" (click)="selectSucursal(2)" style="background-color: rgba(0,0,0,0.6);
+                                                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSF628nUUOah0eST3L1GhoCblpSmvqcDvXBJfyVMeBnnni_Awb4&usqp=CAU');
+                                                background-blend-mode: multiply;
+                                                background-size: cover;
+                                                height: 150px;
+                                                padding: 5%;
+                                                margin-bottom: 5px;">
+                                              
+        <p style="color: white; font-size: 1.2em; font-weight: 500;">Super Santa Gertrudis</p>
+        <ion-label style="color: white;">Sta Gertrudis Norte, Grecia, Alajuela</ion-label><br>
+        <ion-label style="color: white;"> 2783-1223</ion-label>
+      </ion-col>
+      <ion-col size="12" align="center" (click)="selectSucursal(3)" style="background-color: rgba(0,0,0,0.6);
+                                                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQo1n5ORPt5C9Qh2dKdcri33QZyW7Hq0RI6TVrktHZCJCoMsiCV&usqp=CAU');
+                                                background-blend-mode: multiply;
+                                                background-size: cover;
+                                                height: 150px;
+                                                padding: 5%;
+                                                margin-bottom: 5px;">
+        <p style="color: white; font-size: 1.2em; font-weight: 500;">Super Santa Gertrudis</p>
+        <ion-label style="color: white;">Sta Gertrudis Norte, Grecia, Alajuela</ion-label><br>
+        <ion-label style="color: white;"> 2783-1223</ion-label>
+      </ion-col>
+      <ion-col size="12" align="center" (click)="selectSucursal(4)" style="background-color: rgba(0,0,0,0.6);
+                                                background-image: url('https://www.lateja.cr/resizer/MHpsR77UxKoaMkgL45IpJk6APpQ=/600x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/BCM4JDMZT5DKLDFRBDQGXAUXBA.jpg');
+                                                background-blend-mode: multiply;
+                                                background-size: cover;
+                                                height: 150px;
+                                                padding: 5%;
+                                                margin-bottom: 5px;">
+        <p style="color: white; font-size: 1.2em; font-weight: 500;">Super Santa Gertrudis</p>
+        <ion-label style="color: white;">Sta Gertrudis Norte, Grecia, Alajuela</ion-label><br>
+        <ion-label style="color: white;"> 2783-1223</ion-label>
+      </ion-col> -->
+    </ion-row>
+    <br>
+  </ion-grid>
+
+</ion-card-content>
+</ion-content>

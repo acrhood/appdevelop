@@ -1,0 +1,67 @@
+<ion-header style="box-shadow: none">
+    <ion-toolbar class="gradient-header" color="app" style="background: #fff;">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/{{ route }}" (click)="dismiss()"></ion-back-button>
+        </ion-buttons>
+        <ion-title [routerLink]="['/menu']">
+            Appexpress
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <p> {{ nombre }} </p>
+        <ion-row *ngIf="fileslength == 1">
+            <ion-img *ngIf="fileext != 'mp4'" src="{{ file }}" alt="" style="margin: 0 auto; padding: 5% 10% 10% 10%; width: 100%; background: transparent;"></ion-img>
+            <video *ngIf="fileext == 'mp4'" controls style="width: 100%;">
+                <source src="{{ file }}" type="video/mp4">
+            </video>
+        </ion-row>
+        <ion-grid *ngIf="fileslength > 1">
+            <ion-slides pager="true" [options]="slideOpts">
+                <ion-slide *ngFor="let item of listaimgs">
+                    <ion-img *ngIf="item[1] != 'mp4'" [src]="item[0]" alt=""></ion-img>
+                    <video *ngIf="item[1] == 'mp4'" controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer" style="width: 100%; margin-top: 15%">
+                        <source [src]="item[0]" type="video/mp4">
+                    </video>
+                </ion-slide>
+            </ion-slides>
+        </ion-grid>
+        <ion-row>
+            <ion-col size="6" align="center">
+                <label style="margin-bottom: 15px !important; font-size: 0.7em">₡</label>
+                <span style="font-size: 2em;">{{ precio }}</span>
+            </ion-col>
+            <ion-col size="12" style="position: absolute; z-index: 1000; margin-top: -60px;">
+                <div [(ngModel)]="isfav" *ngIf="isfav != 1" (click)="setfavorito()" id="favorito" align="right" ngDefaultControl>
+                    <ion-icon style="font-size: 2.4em; color: #fff; background: rgba(0,0,0,0.1); padding: 1.2%; border-radius: 50%; margin-right: 15%" name="heart-outline"></ion-icon>
+                </div>
+                <div [(ngModel)]="isfav" *ngIf="isfav == 1" (click)="setfavorito()" id="favorito" align="right" ngDefaultControl>
+                    <ion-icon style="font-size: 2.4em; color: #e93535; background: rgba(0,0,0,0.1); padding: 1.2%; border-radius: 50%; margin-right: 15%" name="heart"></ion-icon>
+                </div>
+            </ion-col>
+            <ion-col size="6" align="center">
+                <div class="quantity-selector">
+                    <div class="product-minus-button quantity-button" (click)="restoCant()"><span>-</span></div>
+                        <input type="number" class="quantity-selector-field" (blur)="inputCant()" id="cant" value="1" data-max="2" #cant>
+                    <div class="product-plus-button quantity-button" (click)="plusCant()"><span>+</span></div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row><br>
+            <ion-button (click)="addToOrden( idprod )" style="width: 100%;" class="app" color="app">Agregar al carrito</ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-card-content>
+                <p style="font-weight: 300; color: #525252;" align="left">Entrega aprox.: <b>de 24 a 48</b> horas hábiles para entrega con Correos de Costa Rica</p>
+            </ion-card-content>
+        </ion-row>
+        <ion-row>
+            <ion-card-content style="background: #f7f7f7; width: 100%;">
+                <p>Descripción del producto</p>
+                <label style="font-weight: 300; color: #929292;"> {{ descr }}</label>
+            </ion-card-content>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="gradient-header" color="app">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/signin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reiniciar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row class="ion-margin-top">
+    <ion-col size="1"></ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label position="floating">Confirmar correo</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  <ion-row class="ion-margin-top">
+    <ion-col size="1"></ion-col>
+    <ion-col>
+      <ion-button class="btnapp" color="btnapp pipe-button ion-text-capitalize"
+        expand="block"
+        (click)="resetPass()">Aceptar</ion-button>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+</ion-content>

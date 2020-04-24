@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="gradient-header" color="app">
+    <ion-buttons slot="start">
+      <ion-menu-button><img src="../../../assets/icon/menuicon.svg" style="width: 80%; margin: 0 auto"></ion-menu-button>
+    </ion-buttons>
+    <ion-title [routerLink]="['/menu']">
+      Appexpress
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-card *ngFor="let item of listapedidos">
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <p>{{ item[0] }} Orden <label>{{ item[1] }}</label></p>
+        <ion-button fill="outline" slot="end" (click)="viewreceipt( item[6] )">Recibo</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-col>
+          <p>{{ item[2] }}</p>
+        </ion-col>
+        <ion-col>
+          <p>{{ item[3] }}</p>
+        </ion-col>
+      </ion-item>
+      <ion-card-content>
+        <ion-row id="detallepedido{{ item[0] }}"></ion-row>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <p style="font-size: 1.1;">Envío:</p>
+          </ion-col>
+          <ion-col>
+            <p style="font-size: 1.1em;">CRC <label>{{ item[4] }}</label></p>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <p style="font-size: 1.1;">Total:</p>
+          </ion-col>
+          <ion-col>
+            <p style="font-size: 1.1em;">CRC <label>{{ item[5] }}</label></p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <ion-card-content *ngIf="item[8] != 6">
+        <ion-button class="btnapp"
+          (click)="cancel_orden( item[7], item[0], item[8] )"
+          color="app pipe-button ion-text-capitalize"
+          expand="block"
+          id="payment">
+          Cancelar orden
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</ion-content>

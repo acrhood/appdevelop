@@ -1,0 +1,15 @@
+.app {
+    background: var(--ion-color-insideapp) !important;
+    color: #F8F8F8 !important;
+}
+
+.btnapp{
+    background: var(--ion-color-btnapp) !important;
+    color: #f8f8f8;
+}
+
+ion-avatar ion-img, ion-avatar img{
+    width: 62px !important;
+    height: 62px !important;
+    border-radius: 40% !important;
+}

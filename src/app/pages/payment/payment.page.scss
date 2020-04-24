@@ -1,0 +1,25 @@
+.app {
+    background: var(--ion-color-insideapp) !important;
+    color: #F8F8F8 !important;
+}
+
+.btnapp{
+    background: var(--ion-color-app) !important;
+    color: #f8f8f8;
+    height: 50px;
+}
+
+label.active {
+    background: var(--ion-color-app) !important;
+    color: #fff;
+    padding: 1.8%;
+    border-radius: 0.2em;
+}
+
+.divOpt {
+    border-radius: 2.5em;
+    background: #f7f7f7;
+    height: 55px;
+    width: 55px;
+    margin: 0 auto;
+}

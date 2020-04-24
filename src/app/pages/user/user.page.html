@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar class="gradient-header" color="app">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="../../../assets/icon/menuicon.svg" style="width: 80%; margin: 0 auto">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title [routerLink]="['/menu']">
+      Appexpress
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="color: #7C7C7C;">
+  <ion-grid class="ion-padding ion-margin-top">
+    <ion-row>
+      <h3>Configuración</h3>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-top" style="background: #f7f7f7;" [routerLink]="['/infouser']">
+      <ion-col size="2">
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-label>Mis Datos</ion-label>
+        <ion-icon *ngIf="!platform.is('ios')" name="arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-top" style="background: #f7f7f7;" [routerLink]="['/security']">
+      <ion-col size="2">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-label>Seguridad</ion-label>
+        <ion-icon *ngIf="!platform.is('ios')" name="arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-top" style="background: #f7f7f7;" [routerLink]="['/settings']">
+      <ion-col size="2">
+        <ion-icon name="options"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-label>Ajustes</ion-label>
+        <ion-icon *ngIf="!platform.is('ios')" name="arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-top ion-hide" style="background: #f7f7f7;" [routerLink]="['/reports']">
+      <ion-col size="2">
+        <ion-icon name="stats"></ion-icon>
+      </ion-col>
+      <ion-col size="10" id="reports">
+        <ion-label>Reportes</ion-label>
+        <ion-icon *ngIf="!platform.is('ios')" name="arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid class="ion-padding ion-margin-top">
+    <ion-row style="background: #f7f7f7;">
+      <ion-col size="8" class="ion-margin-left">
+        <label class="name-text" style="display: block; margin-top: 5px;">{{ nameusr }}</label>
+        <label class="mail-text" style="display: block">{{ mailusr }}</label>
+      </ion-col>
+      <ion-col size="4" (click)="logout()" class="ion-text-center">
+        <p>Cerrar Sesión</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

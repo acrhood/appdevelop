@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar class="gradient-header" color="app">
+      <ion-buttons slot="start">
+      <ion-back-button defaultHref="user"></ion-back-button>
+      </ion-buttons>
+      <ion-title slot="end">Mis Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <h2>Datos de la cuenta</h2>
+    </ion-row>
+    <ion-list>
+    <ion-item>
+      <ion-col>
+        <ion-label size="3" class="ion-text-right">Nombre </ion-label>
+      </ion-col>
+      <ion-col size="9">
+        <ion-input [(ngModel)]="nusr" style="color: #000000; font-weight: 300;" value="{{ nameusr }}"></ion-input>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col>
+        <ion-label size="3" class="ion-text-right">Correo </ion-label>
+      </ion-col>
+      <ion-col size="9">
+        <ion-input [(ngModel)]="musr" style="color: #000000; font-weight: 300;" readonly value="{{ mailusr }}"></ion-input>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col>
+        <ion-label size="3" class="ion-text-right">Teléfono </ion-label>
+      </ion-col>
+      <ion-col size="9">
+        <ion-input [(ngModel)]="pusr" style="color: #000000; font-weight: 300;" value="{{ phoneusr }}"></ion-input>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col>
+        <ion-label size="3" class="ion-text-right">Cédula </ion-label>
+      </ion-col>
+      <ion-col size="9">
+        <ion-input [(ngModel)]="cusr" style="color: #000000; font-weight: 300;" value="{{ cedusr }}"></ion-input>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <ion-button color="btnapp ion-text-capitalize" class="btnapp" style="height: 50px;"
+                  expand="block" (click)="actInfo()">
+        Actualizar información
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-hide" id="verified">
+    <ion-col class="ion-padding-start">
+      <p (click)="sendEmailVerification()" style="color: blue;">Reenviar correo de verificación?</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

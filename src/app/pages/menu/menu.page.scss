@@ -1,0 +1,140 @@
+ion-avatar ion-img, ion-avatar img{
+    width: 75px !important;
+    height: 75px !important;
+    max-width: 75px !important;
+    max-height: 75px !important;
+    padding: 1% !important;
+}
+
+ion-card-header {
+  height: 180px;
+  max-height: 180px;
+  min-height: 180px;
+  background: transparent !important;
+}
+
+.btnadd {
+    padding: 0.8em 0.9em !important;
+    color: #fff;
+    z-index: 1000;
+    position: absolute;
+    margin: -22px 0px 0px 0px !important;
+}
+
+.btnalready {
+    padding: 0.8em 0.9em !important;
+    background: rgba(235, 54, 72,0.2) !important;
+    color: rgba(201, 18, 18, 0.5);
+    z-index: 1000;
+    position: absolute;
+    margin: -22px 0px 0px 0px !important;
+}
+
+.cart-icon {
+  position: fixed;
+  width: 10%;
+  margin-top: 15px;
+}
+#badgeorders{
+  background: transparent !important;
+}
+
+[name=add]{
+    font-size: 1.6em;
+}
+
+.app {
+    background-color: var(--ion-color-insideapp) !important;
+    color: #F8F8F8 !important;
+}
+
+.color-grey-text {
+    color: #989aa2 !important;
+}
+
+.vsearch:hover {
+    opacity: 1;
+    .btnsearch {
+        opacity: 1;
+    }
+}
+
+.search {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 95% !important;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .search > ion-input {
+    color: #444444;
+    font-size: 16px;
+    width: 100%;
+    // background: rgba(255,255,255,0.9);
+    background: #ebebeb;
+    padding: 15px;
+    height: 35px;
+    border: none;
+    outline: none;
+    // border-radius: 35px;
+    transition: ease 0.5s;
+    text-align: left;
+    --padding-start: 25px;
+  }
+  
+  .search > ion-input::placeholder {
+    color: #929292;
+    opacity: 1;
+  }
+  
+  .search > ion-input::-ms-placeholder {
+    color: #929292;
+  }
+  
+  .search > ion-input::-ms-input-placeholder {
+    color: #929292;
+  }
+  
+  .search > ion-input:focus,
+  .search > ion-input:valid {
+    background: rgba(255,255,255,1);
+  }
+  // ******************
+  .quantity-selector {
+    clear: both;
+    visibility: visible;
+    display: block;
+    width: 100%;
+  }
+  .product-minus-button,
+  .product-plus-button {
+    padding: 0;
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    background: #ecfcf1;
+    color: #67c48c;
+    border-radius: 50%;
+  }
+  .quantity-selector input {
+    max-width: 70px;
+    background: transparent;
+    font-size: 1em;
+    position: relative;
+    z-index: 1;
+    margin: -5px -1px;
+    float: left;
+    display: block;
+    width: 41%;
+    text-align: center;
+    height: 45px;
+    border: none;
+  }
+  .iconcant {
+    margin-top: 4px;
+  }

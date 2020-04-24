@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="gradient-header" color="app">
+    <ion-buttons slot="start">
+      <ion-menu-button><img src="../../../assets/icon/menuicon.svg" style="width: 80%; margin: 0 auto"></ion-menu-button>
+    </ion-buttons>
+    <ion-title [routerLink]="['/menu']">
+    Appexpress
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>    
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <h3>Tarjetas</h3>
+    </ion-row>
+    <ion-card  *ngFor="let item of listaCards" style="box-shadow: none !important; background: #fafafa;" class="ion-padding">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="11">
+            <div class="ion-padding" *ngIf="item[6] > 0" align="right">
+              <ion-badge color="light">Predeterminada</ion-badge>
+            </div>
+          </ion-col>
+          <ion-col size="1">
+            <div *ngIf="item[6] == 1">
+              <ion-icon name="checkmark-circle" style="font-size: 2em; margin-top: 10px; color: #128BC9;"></ion-icon>
+            </div>
+            <div *ngIf="item[6] != 1" id="{{ item[0] }}" (click)="setDefecto( item[0] )">
+              <ion-icon name="radio-button-off" style="font-size: 2em; margin-top: 10px;"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="9" align-self-start>
+            <p style="font-size: 1.2em;">•••• •••• •••• <b>{{ item[1] }}</b></p>
+            <small>{{ item[2] }}</small>
+          </ion-col>
+          <ion-col size="3" align-self-center>
+            <img src="../../../assets/icon/{{ item[5] }}.svg" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <ion-row align-items-center>
+        <ion-col>
+          <ion-button expand="block" class="btnapp" color="btnapp" (click)="cardDelete( item[0], item[3] )">
+            Eliminar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>
+
+<ion-footer style="padding: 0.2em">
+  <ion-toolbar>
+    <ion-item [routerLink]="['/addcard']">
+      <ion-label>Agregar tarjeta</ion-label>
+      <ion-icon name="add" slot="end"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>  
